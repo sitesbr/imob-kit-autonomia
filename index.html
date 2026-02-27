@@ -1,0 +1,512 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['Inter', 'sans-serif'],
+        },
+        boxShadow: { 
+          soft: "0 10px 40px -10px rgba(0,0,0,.08)",
+          glow: "0 0 20px rgba(16, 185, 129, 0.4)"
+        }
+      }
+    }
+  }
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  .timer-box { min-width: 3rem; text-align: center; }
+</style>
+
+<div class="min-h-screen bg-slate-50 font-sans text-slate-900 selection:bg-emerald-200">
+  
+  <div class="sticky top-0 z-40 border-b border-slate-200 bg-white/85 backdrop-blur-md">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+      <a href="#topo" class="text-lg font-bold tracking-tight text-slate-900">Site de Imóveis</a>
+
+      <div class="hidden items-center gap-6 md:flex text-sm font-medium">
+        <a class="text-slate-500 transition-colors hover:text-slate-900" href="#recebe">O que você recebe</a>
+        <a class="text-slate-500 transition-colors hover:text-slate-900" href="#escopo">Escopo</a>
+        <a class="text-slate-500 transition-colors hover:text-slate-900" href="#investimento">Investimento</a>
+        <a class="text-slate-500 transition-colors hover:text-slate-900" href="#faq">FAQ</a>
+      </div>
+
+      <a href="#cta"
+        class="inline-flex items-center justify-center rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white shadow-soft transition-all hover:bg-slate-800 hover:scale-105 active:scale-95">
+        Agendar alinhamento
+      </a>
+    </div>
+  </div>
+
+  <section id="topo" class="relative overflow-hidden bg-gradient-to-br from-slate-50 via-slate-100 to-slate-200 px-4 pt-12 pb-20 md:pt-20 md:pb-24">
+    <div class="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2">
+      <div class="z-10 relative">
+        <p class="inline-flex items-center rounded-full bg-white px-4 py-1.5 text-xs font-semibold tracking-wide text-slate-700 shadow-sm ring-1 ring-slate-200">
+          <span class="mr-2 flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          WordPress no seu servidor · Elementor Free · Tema Hello
+        </p>
+
+        <h1 class="mt-6 text-4xl font-extrabold tracking-tight text-slate-900 md:text-5xl lg:text-6xl md:leading-tight">
+          Site de Imóveis no Ar. <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500">Painel Pronto.</span> Você no Controle.
+        </h1>
+
+        <p class="mt-6 text-base leading-relaxed text-slate-600 md:text-lg">
+          WordPress configurado no seu servidor, com painel para cadastrar e publicar imóveis —
+          sem depender de ninguém.
+        </p>
+
+        <ul class="mt-8 space-y-3 text-sm font-medium md:text-base text-slate-700">
+          <li class="flex items-center gap-3"><svg class="h-5 w-5 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Instalado direto no seu servidor (acesso via host)</li>
+          <li class="flex items-center gap-3"><svg class="h-5 w-5 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> 100% recursos gratuitos: Elementor Free + Tema Hello (sem licenças premium)</li>
+          <li class="flex items-center gap-3"><svg class="h-5 w-5 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Kit de autonomia: vídeos + checklist para operar sozinho</li>
+        </ul>
+
+        <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+          <a href="#cta"
+            class="inline-flex items-center justify-center rounded-xl bg-slate-900 px-6 py-3.5 text-sm font-bold text-white shadow-soft transition-all hover:-translate-y-1 hover:bg-slate-800 hover:shadow-xl">
+            Quero saber mais / Agendar alinhamento
+          </a>
+          <a href="#escopo"
+            class="inline-flex items-center justify-center rounded-xl bg-white px-6 py-3.5 text-sm font-bold text-slate-900 shadow-sm ring-1 ring-slate-200 transition-all hover:bg-slate-50 hover:shadow-md">
+            Ver escopo fechado
+          </a>
+        </div>
+
+        <p class="mt-6 text-xs text-slate-500 flex items-center gap-2">
+          <svg class="h-4 w-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          Entrega em até <strong>30 dias</strong> · Garantia: <strong>14 dias</strong> (só bugs do escopo)
+        </p>
+      </div>
+
+      <div class="relative z-10 rounded-2xl bg-white p-1 sm:p-2 shadow-xl ring-1 ring-slate-200/50">
+        <div class="rounded-xl bg-white p-6 sm:p-8">
+          
+          <div class="mb-6 rounded-xl bg-red-50 p-4 border border-red-100 flex flex-col items-center">
+            <span class="text-xs font-bold uppercase tracking-wider text-red-600 mb-2">Atenção: Oferta expira em</span>
+            <div class="flex gap-2 text-red-700 font-mono text-2xl font-bold">
+              <div class="timer-box bg-white rounded-lg shadow-sm border border-red-100 py-1"><span class="hours">24</span><span class="text-xs block text-red-400 uppercase font-sans mt-[-4px]">Hrs</span></div>
+              <span class="py-1">:</span>
+              <div class="timer-box bg-white rounded-lg shadow-sm border border-red-100 py-1"><span class="minutes">00</span><span class="text-xs block text-red-400 uppercase font-sans mt-[-4px]">Min</span></div>
+              <span class="py-1">:</span>
+              <div class="timer-box bg-white rounded-lg shadow-sm border border-red-100 py-1"><span class="seconds">00</span><span class="text-xs block text-red-400 uppercase font-sans mt-[-4px]">Seg</span></div>
+            </div>
+          </div>
+
+          <h2 class="text-xl font-bold text-slate-900">Resumo da oferta</h2>
+          <div class="mt-5 grid gap-3 text-sm">
+            <div class="flex items-center justify-between rounded-xl bg-slate-50 p-4 border border-slate-100">
+              <span class="text-slate-500 font-medium">Prazo</span><strong class="text-slate-900">Até 30 dias</strong>
+            </div>
+            <div class="flex items-center justify-between rounded-xl bg-slate-50 p-4 border border-slate-100">
+              <span class="text-slate-500 font-medium">Garantia</span><strong class="text-slate-900">14 dias</strong>
+            </div>
+            <div class="flex items-center justify-between rounded-xl bg-emerald-50 p-4 border border-emerald-100">
+              <span class="text-emerald-700 font-medium">Valor promocional</span><strong class="text-emerald-700 text-lg">R$ 1.793,00</strong>
+            </div>
+            <div class="flex items-center justify-between rounded-xl bg-slate-50 p-4 border border-slate-100">
+              <span class="text-slate-500 font-medium">Parcelamento</span><strong class="text-slate-900">Até 12x no cartão</strong>
+            </div>
+          </div>
+
+          <div class="mt-8">
+            <a href="#investimento"
+              class="block rounded-xl bg-emerald-600 px-5 py-4 text-center text-sm font-bold text-white shadow-glow transition-all hover:-translate-y-1 hover:bg-emerald-500 hover:shadow-xl">
+              Garantir o valor promocional
+            </a>
+            <p class="mt-4 text-center text-xs text-slate-400">
+              Pagamento via intermediador. Parcelas podem variar conforme taxas vigentes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 pt-16">
+    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Casa moderna" class="w-full h-64 md:h-96 object-cover rounded-3xl shadow-soft">
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 pt-16">
+    <h2 class="text-3xl font-extrabold tracking-tight text-slate-900">O que é — e o que não é</h2>
+
+    <div class="mt-8 grid gap-6 md:grid-cols-2">
+      <div class="rounded-2xl bg-white p-8 shadow-soft ring-1 ring-slate-200 border-t-4 border-t-emerald-500">
+        <h3 class="text-lg font-bold text-slate-900">É:</h3>
+        <ul class="mt-4 space-y-3 text-base text-slate-600">
+          <li class="flex gap-2"><span class="text-emerald-500 font-bold">✓</span> Site funcional com cadastro e listagem de imóveis</li>
+          <li class="flex gap-2"><span class="text-emerald-500 font-bold">✓</span> Painel administrativo (WordPress) pronto para uso</li>
+          <li class="flex gap-2"><span class="text-emerald-500 font-bold">✓</span> Entrega com kit de operação (vídeos + checklist)</li>
+        </ul>
+      </div>
+
+      <div class="rounded-2xl bg-white p-8 shadow-soft ring-1 ring-slate-200 border-t-4 border-t-red-500">
+        <h3 class="text-lg font-bold text-slate-900">Não é:</h3>
+        <ul class="mt-4 space-y-3 text-base text-slate-600">
+          <li class="flex gap-2"><span class="text-red-500 font-bold">✕</span> Sistema personalizado sem limites de escopo</li>
+          <li class="flex gap-2"><span class="text-red-500 font-bold">✕</span> Pacote com logo/branding/identidade visual</li>
+          <li class="flex gap-2"><span class="text-red-500 font-bold">✕</span> Manutenção contínua ou suporte mensal</li>
+          <li class="flex gap-2"><span class="text-red-500 font-bold">✕</span> Hospedagem, domínio ou e-mail profissional (isso é do cliente)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 pt-16 md:pt-24">
+    <h2 class="text-3xl font-extrabold tracking-tight text-slate-900">Para quem serve — e para quem não serve</h2>
+
+    <div class="mt-8 grid gap-6 md:grid-cols-2">
+      <div class="rounded-2xl bg-white p-8 shadow-soft ring-1 ring-slate-200 border-l-4 border-l-emerald-500">
+        <h3 class="text-lg font-bold text-slate-900">Serve para quem:</h3>
+        <ul class="mt-4 space-y-3 text-base text-slate-600">
+          <li class="flex gap-2"><span class="text-emerald-500 font-bold">✓</span> Quer um site funcional, rápido e enxuto</li>
+          <li class="flex gap-2"><span class="text-emerald-500 font-bold">✓</span> Aceita WordPress com recursos gratuitos</li>
+          <li class="flex gap-2"><span class="text-emerald-500 font-bold">✓</span> Entende que updates e backups são responsabilidade do cliente</li>
+          <li class="flex gap-2"><span class="text-emerald-500 font-bold">✓</span> Quer autonomia sem depender do desenvolvedor</li>
+        </ul>
+      </div>
+
+      <div class="rounded-2xl bg-white p-8 shadow-soft ring-1 ring-slate-200 border-l-4 border-l-red-500">
+        <h3 class="text-lg font-bold text-slate-900">Não serve para quem:</h3>
+        <ul class="mt-4 space-y-3 text-base text-slate-600">
+          <li class="flex gap-2"><span class="text-red-500 font-bold">✕</span> Precisa de suporte vitalício/manutenção inclusa</li>
+          <li class="flex gap-2"><span class="text-red-500 font-bold">✕</span> Quer integrações avançadas sem orçamento adicional</li>
+          <li class="flex gap-2"><span class="text-red-500 font-bold">✕</span> Busca branding + material gráfico no pacote</li>
+          <li class="flex gap-2"><span class="text-red-500 font-bold">✕</span> Precisa de mudanças ilimitadas no pós-entrega</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="recebe" class="mx-auto max-w-6xl px-4 pt-16 md:pt-24">
+    <h2 class="text-3xl font-extrabold tracking-tight text-slate-900">O que você recebe</h2>
+
+    <div class="mt-8 grid gap-6 md:grid-cols-3">
+      <div class="rounded-2xl bg-white shadow-soft ring-1 ring-slate-200 overflow-hidden transition-all hover:-translate-y-1 hover:shadow-xl">
+        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeefa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Interface" class="w-full h-40 object-cover">
+        <div class="p-8">
+          <h3 class="text-lg font-bold text-slate-900">Estrutura do site</h3>
+          <ul class="mt-4 space-y-2 text-sm text-slate-600">
+            <li>• Até <strong>4</strong> páginas institucionais</li>
+            <li>• <strong>2</strong> templates (listagem + detalhe do imóvel)</li>
+            <li>• Formulário de contato básico</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="rounded-2xl bg-white shadow-soft ring-1 ring-slate-200 overflow-hidden transition-all hover:-translate-y-1 hover:shadow-xl">
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Painel" class="w-full h-40 object-cover">
+        <div class="p-8">
+          <h3 class="text-lg font-bold text-slate-900">Painel (WordPress)</h3>
+          <ul class="mt-4 space-y-2 text-sm text-slate-600">
+            <li>• Cadastro de imóveis com até <strong>12</strong> campos</li>
+            <li>• Galeria de fotos por imóvel</li>
+            <li>• Publicar/despublicar anúncios</li>
+            <li>• Filtros básicos</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="rounded-2xl bg-white shadow-soft ring-1 ring-slate-200 overflow-hidden transition-all hover:-translate-y-1 hover:shadow-xl">
+        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Código" class="w-full h-40 object-cover">
+        <div class="p-8">
+          <h3 class="text-lg font-bold text-slate-900">Stack utilizada</h3>
+          <ul class="mt-4 space-y-2 text-sm text-slate-600">
+            <li>• WordPress + Tema Hello</li>
+            <li>• Elementor Free</li>
+            <li>• Plugins gratuitos (lista no kit)</li>
+            <li>• Sem tema/plugin premium</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="escopo" class="mx-auto max-w-6xl px-4 pt-16 md:pt-24">
+    <div class="rounded-2xl bg-white shadow-soft ring-1 ring-slate-200 overflow-hidden">
+      <div class="bg-slate-50 border-b border-slate-200 p-8 flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
+        <div>
+          <h2 class="text-3xl font-extrabold tracking-tight text-slate-900">Escopo Fechado</h2>
+          <p class="mt-2 text-base text-slate-600">Qualquer item fora destes limites é novo orçamento, sem exceção.</p>
+        </div>
+      </div>
+
+      <div class="p-8 overflow-x-auto">
+        <table class="w-full min-w-[560px] text-left text-base">
+          <thead>
+            <tr class="border-b-2 border-slate-100 text-slate-900">
+              <th class="py-4 pr-4 font-bold">Item</th>
+              <th class="py-4 font-bold text-right">Limite incluído</th>
+            </tr>
+          </thead>
+          <tbody class="text-slate-600">
+            <tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors">
+              <td class="py-4 pr-4">Páginas institucionais</td>
+              <td class="py-4 text-right">Até <strong class="text-slate-900">4</strong></td>
+            </tr>
+            <tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors">
+              <td class="py-4 pr-4">Templates (listagem + detalhe)</td>
+              <td class="py-4 text-right"><strong class="text-slate-900">2</strong></td>
+            </tr>
+            <tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors">
+              <td class="py-4 pr-4">Campos por imóvel</td>
+              <td class="py-4 text-right">Até <strong class="text-slate-900">12</strong></td>
+            </tr>
+            <tr class="hover:bg-slate-50 transition-colors">
+              <td class="py-4 pr-4">Rodadas de revisão</td>
+              <td class="py-4 text-right"><strong class="text-slate-900">2</strong></td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <div class="mt-6 flex items-start gap-3 rounded-xl bg-amber-50 p-5 border border-amber-100">
+          <svg class="h-6 w-6 text-amber-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <p class="text-sm text-amber-800 leading-relaxed">
+            <strong>Como funciona a revisão:</strong> cada rodada deve ser enviada em <strong>lista única</strong>. Revisão cobre ajustes dentro do escopo — não inclui novas páginas, campos, funcionalidades ou integrações.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 pt-16 md:pt-24">
+    <h2 class="text-3xl font-extrabold tracking-tight text-slate-900">O que NÃO está incluso</h2>
+
+    <div class="mt-8 rounded-2xl bg-slate-900 p-8 shadow-soft text-slate-300 relative overflow-hidden">
+      <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Textura Dark" class="absolute inset-0 w-full h-full object-cover opacity-10">
+      
+      <ul class="grid gap-4 text-base md:grid-cols-2 relative z-10">
+        <li class="flex gap-3"><span class="text-emerald-500">•</span> Logo, identidade visual, branding, materiais gráficos</li>
+        <li class="flex gap-3"><span class="text-emerald-500">•</span> Plugins/temas premium (qualquer um)</li>
+        <li class="flex gap-3"><span class="text-emerald-500">•</span> Manutenção, updates ou suporte mensal após a garantia</li>
+        <li class="flex gap-3"><span class="text-emerald-500">•</span> Integrações com portais (ZAP, VivaReal etc.)</li>
+        <li class="flex gap-3"><span class="text-emerald-500">•</span> Integração com CRM/sistemas externos</li>
+        <li class="flex gap-3"><span class="text-emerald-500">•</span> Hospedagem, domínio, e-mail</li>
+        <li class="flex gap-3"><span class="text-emerald-500">•</span> Falhas decorrentes de updates feitos sem backup / fora do procedimento do kit</li>
+        <li class="flex gap-3"><span class="text-emerald-500">•</span> Alterações por terceiros após entrega</li>
+        <li class="flex gap-3"><span class="text-emerald-500">•</span> Páginas/templates/campos além do escopo</li>
+        <li class="flex gap-3"><span class="text-emerald-500">•</span> SEO avançado, analytics completo, campanhas e marketing</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 pt-16 md:pt-24">
+    <h2 class="text-3xl font-extrabold tracking-tight text-slate-900">Como funciona</h2>
+
+    <div class="mt-8 grid gap-6 md:grid-cols-4 relative">
+      <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-slate-200 -z-10 -translate-y-1/2"></div>
+      
+      <div class="rounded-2xl bg-white p-6 shadow-soft ring-1 ring-slate-200 text-center relative">
+        <div class="mx-auto mb-4 flex h-8 w-8 items-center justify-center rounded-full bg-slate-900 text-xs font-bold text-white ring-4 ring-white">1</div>
+        <h3 class="font-bold text-slate-900 text-lg">Checklist + material</h3>
+        <p class="mt-3 text-sm text-slate-600">O prazo começa após pagamento + envio completo dos acessos e conteúdo mínimo.</p>
+        <p class="mt-2 text-xs font-semibold text-red-500">Atraso de conteúdo/aprovação pausa o cronograma.</p>
+      </div>
+      
+      <div class="rounded-2xl bg-white p-6 shadow-soft ring-1 ring-slate-200 text-center relative">
+        <div class="mx-auto mb-4 flex h-8 w-8 items-center justify-center rounded-full bg-slate-900 text-xs font-bold text-white ring-4 ring-white">2</div>
+        <h3 class="font-bold text-slate-900 text-lg">Implementação</h3>
+        <p class="mt-3 text-sm text-slate-600">Instalação do WP, tema, plugins e estrutura no seu servidor.</p>
+      </div>
+      
+      <div class="rounded-2xl bg-white p-6 shadow-soft ring-1 ring-slate-200 text-center relative">
+        <div class="mx-auto mb-4 flex h-8 w-8 items-center justify-center rounded-full bg-slate-900 text-xs font-bold text-white ring-4 ring-white">3</div>
+        <h3 class="font-bold text-slate-900 text-lg">Revisão</h3>
+        <p class="mt-3 text-sm text-slate-600"><strong class="text-slate-900">2</strong> rodada(s). Fora do escopo = novo orçamento.</p>
+      </div>
+      
+      <div class="rounded-2xl bg-white p-6 shadow-soft ring-1 ring-slate-200 text-center relative">
+        <div class="mx-auto mb-4 flex h-8 w-8 items-center justify-center rounded-full bg-slate-900 text-xs font-bold text-white ring-4 ring-white">4</div>
+        <h3 class="font-bold text-slate-900 text-lg">Publicação + entrega</h3>
+        <p class="mt-3 text-sm text-slate-600">Site no ar + kit de autonomia + encerramento formal.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 pt-16 md:pt-24">
+    <div class="grid gap-6 md:grid-cols-2">
+      <div class="rounded-2xl bg-emerald-50 p-8 shadow-soft ring-1 ring-emerald-100 flex flex-col justify-between">
+        <div>
+          <h2 class="text-2xl font-bold tracking-tight text-emerald-900">Kit de Entrega</h2>
+          <ul class="mt-6 space-y-4 text-base text-emerald-800">
+            <li class="flex items-center gap-3">🎬 Vídeo 1: Como cadastrar um imóvel passo a passo</li>
+            <li class="flex items-center gap-3">🎬 Vídeo 2: Como atualizar plugins/tema com segurança</li>
+            <li class="flex items-center gap-3">🎬 Vídeo 3: Como fazer backup do site</li>
+            <li class="flex items-center gap-3">📋 Checklist mensal de manutenção</li>
+            <li class="flex items-center gap-3">📄 Lista completa de plugins e tema instalados</li>
+          </ul>
+        </div>
+        <p class="mt-6 text-sm text-emerald-700 bg-white/80 p-4 rounded-xl font-medium shadow-sm">
+          O kit existe para você (ou qualquer dev no futuro) operar e evoluir o site sem dependência.
+        </p>
+      </div>
+
+      <div class="rounded-2xl bg-white shadow-soft ring-1 ring-slate-200 overflow-hidden flex flex-col">
+        <img src="https://images.unsplash.com/photo-1554774853-719586f82d77?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Aperto de mão / Garantia" class="w-full h-48 object-cover">
+        <div class="p-8">
+          <h2 class="text-2xl font-bold tracking-tight text-slate-900">Garantia e Encerramento</h2>
+          <div class="mt-6 flex flex-col gap-4 text-base text-slate-600">
+            <p>
+              <strong class="text-slate-900">14 dias corridos de garantia</strong> após a entrega/publicação. Cobre <strong>bugs comprovadamente do escopo entregue</strong>.
+            </p>
+            <p class="text-sm">
+              Não cobre: updates sem backup, alterações de terceiros, mau uso, problemas do servidor/hospedagem, ou funcionalidades fora do escopo.
+            </p>
+            <div class="h-px w-full bg-slate-100"></div>
+            <p>
+              Após a garantia, qualquer ajuste/evolução vira novo orçamento. Você pode contratar qualquer dev WordPress.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="investimento" class="mx-auto max-w-6xl px-4 pt-16 md:pt-24">
+    <div class="relative overflow-hidden rounded-3xl bg-slate-900 p-8 md:p-12 shadow-2xl">
+      <div class="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-emerald-500/10 blur-3xl"></div>
+      
+      <div class="relative z-10 grid gap-10 md:grid-cols-2 md:items-center">
+        <div>
+          <h2 class="text-3xl font-extrabold tracking-tight text-white">Investimento</h2>
+
+          <div class="mt-8 space-y-4">
+            <div>
+              <p class="text-sm font-medium text-slate-400">Valor normal</p>
+              <p class="text-2xl font-medium line-through text-slate-500">R$ 2.300,00</p>
+            </div>
+
+            <div>
+              <p class="text-sm font-medium text-emerald-400">Valor promocional</p>
+              <p class="text-5xl font-extrabold text-white">R$ 1.793,00</p>
+            </div>
+
+            <p class="text-lg text-white">Em até <strong class="text-emerald-400">12x no cartão</strong></p>
+            <p class="text-xs text-slate-400">Parcelas podem variar conforme taxas do intermediador.</p>
+          </div>
+        </div>
+
+        <div id="cta" class="rounded-2xl bg-white p-8 text-slate-900 shadow-xl">
+          
+          <div class="mb-6 flex justify-center">
+            <div class="inline-flex items-center gap-2 rounded-full bg-red-50 px-4 py-1.5 border border-red-100">
+               <span class="h-2 w-2 rounded-full bg-red-500 animate-pulse"></span>
+               <span class="text-xs font-bold text-red-600 uppercase tracking-wide">Expira em:</span>
+               <span class="font-mono font-bold text-red-700"><span class="hours">24</span>:<span class="minutes">00</span>:<span class="seconds">00</span></span>
+            </div>
+          </div>
+
+          <h3 class="text-xl font-bold text-center">Pronto para começar?</h3>
+          <p class="mt-3 text-sm text-center text-slate-600">
+            Entrega em até 30 dias · Site funcional · Painel que você opera · Kit de autonomia
+          </p>
+
+          <a href="https://wa.me/SEUNUMEROAQUI"
+            class="mt-8 block rounded-xl bg-emerald-600 px-6 py-4 text-center text-base font-bold text-white shadow-glow transition-all hover:-translate-y-1 hover:bg-emerald-500 hover:shadow-xl">
+            Quero contratar / Agendar alinhamento
+          </a>
+
+          <p class="mt-4 text-center text-xs text-slate-400">
+            Troque o link acima por WhatsApp/Calendly. Ex.: wa.me/55DDDNUMERO
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="mx-auto max-w-4xl px-4 py-16 md:py-24">
+    <div class="text-center mb-10">
+      <h2 class="text-3xl font-extrabold tracking-tight text-slate-900">Perguntas Frequentes</h2>
+    </div>
+
+    <div class="space-y-4">
+      <details class="group rounded-2xl bg-white p-6 shadow-soft ring-1 ring-slate-200 transition-all [&_summary::-webkit-details-marker]:hidden">
+        <summary class="flex cursor-pointer items-center justify-between font-bold text-slate-900 text-lg">
+          Consigo cadastrar imóveis sozinho depois?
+          <span class="transition group-open:rotate-180">
+            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+          </span>
+        </summary>
+        <p class="mt-4 text-base text-slate-600 leading-relaxed">Sim. O kit de vídeos foi feito exatamente para isso.</p>
+      </details>
+
+      <details class="group rounded-2xl bg-white p-6 shadow-soft ring-1 ring-slate-200 transition-all [&_summary::-webkit-details-marker]:hidden">
+        <summary class="flex cursor-pointer items-center justify-between font-bold text-slate-900 text-lg">
+          Manutenção mensal está inclusa?
+          <span class="transition group-open:rotate-180">
+            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+          </span>
+        </summary>
+        <p class="mt-4 text-base text-slate-600 leading-relaxed">Não. Após a entrega e a garantia, updates e backups são responsabilidade do cliente.</p>
+      </details>
+
+      <details class="group rounded-2xl bg-white p-6 shadow-soft ring-1 ring-slate-200 transition-all [&_summary::-webkit-details-marker]:hidden">
+        <summary class="flex cursor-pointer items-center justify-between font-bold text-slate-900 text-lg">
+          Preciso comprar plugin ou tema premium?
+          <span class="transition group-open:rotate-180">
+            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+          </span>
+        </summary>
+        <p class="mt-4 text-base text-slate-600 leading-relaxed">Não. A stack é 100% gratuita. Premium só se você quiser no futuro.</p>
+      </details>
+
+      <details class="group rounded-2xl bg-white p-6 shadow-soft ring-1 ring-slate-200 transition-all [&_summary::-webkit-details-marker]:hidden">
+        <summary class="flex cursor-pointer items-center justify-between font-bold text-slate-900 text-lg">
+          Atualizei um plugin e quebrou. E agora?
+          <span class="transition group-open:rotate-180">
+            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+          </span>
+        </summary>
+        <p class="mt-4 text-base text-slate-600 leading-relaxed">
+          Isso é responsabilidade do cliente. O kit ensina backup antes de atualizar para evitar esse risco.
+        </p>
+      </details>
+    </div>
+  </section>
+
+  <div class="fixed inset-x-0 bottom-0 z-50 border-t border-slate-200 bg-white/90 p-3 backdrop-blur-md md:hidden">
+    <a href="#cta"
+      class="block rounded-xl bg-emerald-600 px-4 py-3.5 text-center text-sm font-bold text-white shadow-glow transition-all active:scale-95">
+      Agendar alinhamento
+    </a>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const duration = 24 * 60 * 60 * 1000;
+    
+    let endTime = localStorage.getItem('offerEndTime');
+    
+    if (!endTime || new Date().getTime() > endTime) {
+      endTime = new Date().getTime() + duration;
+      localStorage.setItem('offerEndTime', endTime);
+    }
+
+    const updateTimer = () => {
+      const now = new Date().getTime();
+      const distance = endTime - now;
+
+      if (distance < 0) {
+        localStorage.removeItem('offerEndTime');
+        return;
+      }
+
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.querySelectorAll('.hours').forEach(el => el.innerText = String(hours).padStart(2, '0'));
+      document.querySelectorAll('.minutes').forEach(el => el.innerText = String(minutes).padStart(2, '0'));
+      document.querySelectorAll('.seconds').forEach(el => el.innerText = String(seconds).padStart(2, '0'));
+    };
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+  });
+</script>
